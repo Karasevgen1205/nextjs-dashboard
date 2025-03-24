@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
       {/* <div className={styles.shape}> */}
-      <div className="w-auto h-[100] md:h-[150] flex items-end rounded-[15] bg-blue-400">
+      <div className="w-auto h-[130] md:h-[150] flex items-end rounded-[15] bg-blue-400">
         <AcmeLogo />
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">

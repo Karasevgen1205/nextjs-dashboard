@@ -2,6 +2,7 @@ import { generateYAxis } from "@/app/lib/utils";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import { lusitana } from "@/app/ui/fonts";
 import { Revenue } from "@/app/lib/definitions";
+import { fetchRevenue } from "@/app/lib/data";
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -9,12 +10,10 @@ import { Revenue } from "@/app/lib/definitions";
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default async function RevenueChart({
-  revenue,
-}: {
-  revenue: Revenue[];
-}) {
-  const chartHeight = 350;
+const CHART_HEIGHT = 350;
+
+export default async function RevenueChart() {
+  const revenue = await fetchRevenue();
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
   if (!revenue || revenue.length === 0) {
@@ -30,7 +29,7 @@ export default async function RevenueChart({
         <div className="sm:grid-cols-13 mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 md:gap-4">
           <div
             className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"
-            style={{ height: `${chartHeight}px` }}
+            style={{ height: `${CHART_HEIGHT}px` }}
           >
             {yAxisLabels.map((label) => (
               <p key={label}>{label}</p>
@@ -42,7 +41,7 @@ export default async function RevenueChart({
               <div
                 className="w-full rounded-md bg-blue-300"
                 style={{
-                  height: `${(chartHeight / topLabel) * month.revenue}px`,
+                  height: `${(CHART_HEIGHT / topLabel) * month.revenue}px`,
                 }}
               ></div>
               <p className="-rotate-90 text-sm text-gray-400 sm:rotate-0">
