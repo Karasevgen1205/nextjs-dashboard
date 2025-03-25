@@ -17,8 +17,8 @@ export default function Page() {
           <p
             className={`${lusitana.className} antialiased text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
-            <strong>Welcome!</strong> I'm a front-end developer and this is my
-            first{" "}
+            <strong>Welcome!</strong> I&apos;m a front-end developer and this is
+            my first{" "}
             <Link href="/dashboard" className="text-blue-500">
               full-stack application
             </Link>{" "}
