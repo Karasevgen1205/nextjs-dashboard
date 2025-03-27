@@ -27,8 +27,8 @@ export default function LoginForm() {
           Please log in to continue.
         </h1>
         <div>
-          Try to use this test creds: email: 'user@nextmail.com' & password:
-          '123456'.
+          Try to use this test creds: email: &apos;user@nextmail.com&apos; &
+          password: &apos;123456&apos;.
         </div>
         <div className="w-full">
           <div>
